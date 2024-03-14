@@ -4,14 +4,14 @@ services:
 
   db:
     container_name: postgres
-    image: postgres:15.2-alpine
+    image: postgres:16.2-alpine
     restart: unless-stopped
     environment:
       POSTGRES_USER: demo
       POSTGRES_PASSWORD: demo
       POSTGRES_DB: demo
     ports:
-      - 5432:5432
+      - 5434:5432
     volumes:
       - ./db-postgres/db:/var/lib/postgresql/data
       - ./db-postgres/import:/import
@@ -27,7 +27,7 @@ services:
 # https://github.com/khezen/compose-postgres/blob/master/docker-compose.yml
   pgadmin:
     container_name: pgadmin
-    image: dpage/pgadmin4:6.20
+    image: dpage/pgadmin4:8.4
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
@@ -35,7 +35,7 @@ services:
     volumes:
       - ./db-postgres/pgadmin:/root/.pgadmin
     ports:
-      - 8090:80
+      - 8091:80
     networks:
       - postgres
     restart: unless-stopped
