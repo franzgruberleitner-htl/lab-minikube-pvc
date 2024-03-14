@@ -1,7 +1,5 @@
 #!/usr/bin/bash
 
-./env.sh
-
 mvn -B package
 cp src/main/docker/Dockerfile target/
 
@@ -10,8 +8,8 @@ export GITHUB_TOKEN=ZnJhbnpncnViZXJsZWl0bmVyLWh0bDpnaHBfOXdGSVQ3ZnBKNXpGeHpwOWFW
 export GITHUB_REPOSITORY=franzgruberleitner-htl
 
 docker login ghcr.io -u $GITHUB_ACTOR  -p $GITHUB_TOKEN
-docker build --tag ghcr.io/franzgruberleitner-htl/backend:latest ./target
-docker push ghcr.io/franzgruberleitner-htl/backend:latest
+docker build --tag ghcr.io/$GITHUB_ACTOR/backend:latest ./target
+docker push ghcr.io/$GITHUB_ACTOR/backend:latest
 
 
 
