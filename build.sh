@@ -5,7 +5,7 @@
 mvn -B package
 cp src/main/docker/Dockerfile target/
 
-export GITHUB_ACTOR=franzgruberleitner-htl
+export GITHUB_ACTOR=f.gruber-leitner@htl-leonding.ac.at
 export GITHUB_TOKEN=ZnJhbnpncnViZXJsZWl0bmVyLWh0bDpnaHBfOXdGSVQ3ZnBKNXpGeHpwOWFWd0xYNnFnUjdBOUlvM2dTYWRW
 export GITHUB_REPOSITORY=franzgruberleitner-htl
 
