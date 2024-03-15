@@ -8,7 +8,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: appsrv
+      component: appsrv
   template:
     metadata:
       labels:

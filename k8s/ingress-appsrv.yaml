@@ -10,6 +10,6 @@ spec:
     match: Host(`fgl.cloud.key.fit`)
     services:
     - name: appsrv
-      port: 8080
+      port: 80
 #  tls:
 #    secretName: default-ingress-cert
